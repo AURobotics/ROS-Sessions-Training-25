@@ -40,7 +40,6 @@
   "workspaceMount": "source=${localWorkspaceFolder},target=/home/${localEnv:USER}/ros2_ws,type=bind",
   "mounts": [],
   "runArgs": [
-      "--net=host",
-      "--privileged"
+      "--net=host"
   ]
 }

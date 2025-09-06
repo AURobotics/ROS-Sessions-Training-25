@@ -20,6 +20,8 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
+            "my_node=mypkg.my_node:main",
+            "oop_node=mypkg.oop_node:main"
         ],
     },
 )

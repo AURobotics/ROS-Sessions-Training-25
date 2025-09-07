@@ -1,14 +1,10 @@
-# ROS 2 Python Package Workshop
-
-
 ## 1. Create a ROS 2 Workspace
 
 ```bash
-# Create workspace folder
-dmkdir -p ~/ros2_ws/src
+mkdir -p ~/ros2_ws/src
 cd ~/ros2_ws
 
-# Initialize workspace (optional, for ROS 2 Foxy and above)
+# Initialize workspace (build once to set it up)
 colcon build
 ```
 
@@ -80,13 +76,15 @@ class MinimalPublisher(Node):
     def __init__(self):
         super().__init__('minimal_publisher')
         self.publisher_ = self.create_publisher(String, 'topic', 10)
-        
+        self.timer = self.create_timer(1.0, self.timer_callback)
+        self.count = 0
 
     def timer_callback(self):
-        # define message type
-        # your callback logic
-        # publish your msg
-        
+        msg = String()
+        msg.data = f'Hello ROS 2: {self.count}'
+        self.publisher_.publish(msg)
+        self.get_logger().info(f'Publishing: "{msg.data}"')
+        self.count += 1
         
 def main():
     rclpy.init()
@@ -117,8 +115,7 @@ class MinimalSubscriber(Node):
             10)
 
     def listener_callback(self, msg):
-        # your callback logic
-
+        self.get_logger().info(f'I heard: "{msg.data}"')
 
 def main():
     rclpy.init()
@@ -135,10 +132,9 @@ def main():
 ```bash
 cd ~/ros2_ws
 colcon build
-source install/setup.bash
 ```
 
-> You can add `source ~/ros2_ws/install/setup.bash` to your `~/.bashrc` for automatic setup.
+Since we already added sourcing to `~/.bashrc`, you don’t need to run `source install/setup.bash` every time.  
 
 ---
 
@@ -177,10 +173,6 @@ ros2 node info /minimal_publisher
 
 ## 9. Notes
 
-- Always **source the workspace** before running nodes.  
+- Always **source the workspace** before running nodes (already automated via `.bashrc`).  
 - Use `chmod +x filename.py` for executable Python scripts if running directly.  
-- Make sure your `entry_points` in `setup.py` matches the node filenames and `main()` function names.
-
----
-
-
+- Make sure your `entry_points` in `setup.py` matches the node filenames and `main()` function names.  

@@ -39,7 +39,7 @@ source ~/.bashrc
 
 ```bash
 cd ~/ros2_ws/src
-ros2 pkg create --build-type ament_python --dependencies rclpy my_pkg
+ros2 pkg create <package-name> --build-type ament_python --dependencies rclpy my_pkg
 ```
 
 Folder structure will look like:

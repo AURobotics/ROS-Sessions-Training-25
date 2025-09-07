@@ -1,7 +1,6 @@
 install/
 log/
 build/
-resource/
 test/
 
 # Ignore generated docs

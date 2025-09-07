@@ -7,10 +7,35 @@ cd ~/ros2_ws
 # Initialize workspace (build once to set it up)
 colcon build
 ```
+## 2. Sourcing the workspace
 
----
+You have 2 options:
+ 
+ ### 2.1 Source your workspace each time you open a new terminal.
 
-## 2. Create a Python Package
+Navigate to the location of your workspace ( i have my workspace in the home directory!)
+
+![Sourcing Workspace](assets/images/source-ws-eachtime.png)
+
+> ⚠️ This must be done each time you start a new terminal !!
+
+### 2.2 Add the source line to the bash file
+
+- Open the bash file using text editor : `gedit ~/.bashrc`
+
+- Go to the end of the bash file and add the source command:
+
+    `source <path-to-ur-workspace>/ros2_ws/install/setup.bash
+    `
+
+Then return to the terminal and reload your bash configuration:
+```bash
+source ~/.bashrc
+``` 
+![Sourcing Workspace](assets/images/source-ws.jpeg)
+
+
+## 3. Create a Python Package
 
 ```bash
 cd ~/ros2_ws/src
@@ -34,7 +59,7 @@ ros2_ws/
 
 ---
 
-## 3. `setup.py` Example
+## 4. `setup.py` Example
 
 ```python
 from setuptools import setup
@@ -63,7 +88,7 @@ setup(
 
 ---
 
-## 4. Example Publisher Node (`publisher_node.py`)
+## 5. Example Publisher Node (`publisher_node.py`)
 
 ```python
 #!/usr/bin/env python3
@@ -96,7 +121,7 @@ def main():
 
 ---
 
-## 5. Example Subscriber Node (`subscriber_node.py`)
+## 6. Example Subscriber Node (`subscriber_node.py`)
 
 ```python
 #!/usr/bin/env python3
@@ -127,7 +152,7 @@ def main():
 
 ---
 
-## 6. Build and Source the Workspace
+## 7. Build and Source the Workspace
 
 ```bash
 cd ~/ros2_ws
@@ -138,7 +163,7 @@ Since we already added sourcing to `~/.bashrc`, you don’t need to run `source 
 
 ---
 
-## 7. Run Nodes
+## 8. Run Nodes
 
 ```bash
 # Terminal 1: Run Publisher
@@ -150,7 +175,7 @@ ros2 run my_pkg listener
 
 ---
 
-## 8. Useful ROS 2 Commands
+## 9. Useful ROS 2 Commands
 
 ```bash
 # List all packages
@@ -171,7 +196,7 @@ ros2 node info /minimal_publisher
 
 ---
 
-## 9. Notes
+## 10. Notes
 
 - Always **source the workspace** before running nodes (already automated via `.bashrc`).  
 - Use `chmod +x filename.py` for executable Python scripts if running directly.  

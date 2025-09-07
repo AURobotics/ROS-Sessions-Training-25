@@ -1,4 +1,5 @@
-# ROS 2 Workspace (ros2_ws)
+# Setting Up the Dev Container to use ROS2 Workspace
+
 This repository contains a ready-to-use **ROS 2 Humble workspace** inside a **VS Code Dev Container**.  
 It ensures that everyone has the same development environment without worrying about operating system differences.
 
@@ -119,3 +120,4 @@ Run this command:
 ```bash
 echo $ROS_DISTRO
 ```
+

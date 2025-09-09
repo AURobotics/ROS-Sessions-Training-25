@@ -23,7 +23,11 @@ setup(
             "my_node=mypkg.my_node:main",
             "oop_node=mypkg.oop_node:main",
             "publisher_node=mypkg.publisher_node:main",
-            "subscriber_node=mypkg.subscriber_node:main"
+            "subscriber_node=mypkg.subscriber_node:main",
+            "server_node=mypkg.server_node:main",
+            "client_node=mypkg.client_node:main",
+            "test_node=mypkg.test_node:main",
+            "param_node=mypkg.param_node:main"
         ],
     },
 )

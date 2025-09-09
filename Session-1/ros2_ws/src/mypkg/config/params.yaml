@@ -1,0 +1,5 @@
+param_node:
+  ros__parameters:
+    robot_name: rover
+    robot_speed: 2.5
+    manual_mode: True

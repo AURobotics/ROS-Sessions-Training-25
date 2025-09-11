@@ -43,7 +43,7 @@ ros2 param load /param_node config/params.yaml
 
 ---
 
-## 2. Loading Parameters on Node Startup
+## 2. Loading Parameters on Node Startup (IF YOU HAVE AN EXISTING YAML file)
 
 You can provide a parameter file when starting a node:
 
@@ -100,8 +100,14 @@ if __name__ == '__main__':
 
 ---
 ## 4. Using a YAML File
+1. Navigate to your package
+2. Create a `config` folder 
+3. inside your `config` folder create your parameters file `params.yaml`
 
-Example: `params.yaml`
+![alt](../assets/images/folder_config.png)
+
+
+### Example: `params.yaml`
 
 ```yaml
 param_node:

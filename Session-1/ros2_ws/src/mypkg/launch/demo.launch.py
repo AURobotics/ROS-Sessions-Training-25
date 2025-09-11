@@ -7,7 +7,8 @@ def generate_launch_description():
     demo_node=Node(
             package='turtlesim',
             executable='turtlesim_node',
-            name='sim'
+            name='sim',
+            remappings=[('/turtle1/cmd_vel', '/my_cmd_vel')]
         )
     
     ld.add_action(demo_node)

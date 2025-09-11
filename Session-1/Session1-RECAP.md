@@ -15,7 +15,7 @@ You have 2 options:
 
 Navigate to the location of your workspace ( i have my workspace in the home directory!)
 
-![Sourcing Workspace](assets/images/source-ws-eachtime.png)
+![Sourcing Workspace](../assets/images/source-ws-eachtime.png)
 
 > ⚠️ This must be done each time you start a new terminal !!
 
@@ -32,7 +32,7 @@ Then return to the terminal and reload your bash configuration:
 ```bash
 source ~/.bashrc
 ``` 
-![Sourcing Workspace](assets/images/source-ws.jpeg)
+![Sourcing Workspace](../assets/images/source-ws.jpeg)
 
 
 ## 3. Create a Python Package

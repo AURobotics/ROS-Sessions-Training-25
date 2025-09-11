@@ -42,8 +42,7 @@ Instead of sourcing ROS 2 each time you open a new terminal, add it to your `~/.
 # Add this at the end of your ~/.bashrc file
 source /opt/ros/humble/setup.bash
 ```
-![Bash file](assets/images/ros-source-bashfile.png)
-
+![Bash file](../assets/images/ros-source-bashfile.png)
 ### Don't Forget to save the file before exiting it!!
 
 > ⚠️ Replace `humble` with your ROS 2 distribution (`foxy`, `galactic`, `jazzy`, etc.) if you’re not on Humble.
@@ -58,7 +57,7 @@ Open a new terminal session and type in
 ```bash 
 ros2 run turtlesim turtlesim_node 
 ```
-![turtlesim Node](assets/images/turtle-sim.png)
+![turtlesim Node](../assets/images/turtle-sim.png)
 
 
 ## Now you're ready to start developing ROS2 Projects!!!
